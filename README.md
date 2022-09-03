@@ -1,4 +1,4 @@
-# create-terraform-app
+# create-terraform-app - WORK IN PROGRESS
 
 A clone of create-react-app to generate basic Terraform code
 
