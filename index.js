@@ -2,6 +2,8 @@
 
 const { Command } = require('commander');
 const chalk = require('chalk');
+const fs = require('fs-extra');
+const path = require('path');
 
 let projectName;
 
@@ -22,6 +24,26 @@ function init() {
     .showHelpAfterError()
     .parse(process.argv);
 
-  console.log(projectName);
+  const fullPath = path.resolve(projectName);
+
+  console.log(`Creating a new Terraform project in ${chalk.green(fullPath)}.`);
+  fs.ensureDirSync(fullPath);
+
+  // Copy main.tf
+  fs.copyFile(__dirname + '/template/main.tf', fullPath + '/main.tf', (err) => {
+    if (err) {
+      err ? console.log('Error occured: ', err) : null;
+    }
+  });
+
+  // Copy versions.tf
+  fs.copyFile(
+    __dirname + '/template/versions.tf',
+    fullPath + '/versions.tf',
+    (err) => {
+      err ? console.log('Error occured: ', err) : null;
+    }
+  );
 }
+
 init();

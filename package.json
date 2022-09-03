@@ -20,7 +20,7 @@
   "homepage": "https://github.com/MarcBuch/create-terraform-app#readme",
   "dependencies": {
     "chalk": "4.1.2",
-    "commander": "^9.4.0"
-  },
-  "devDependencies": {}
+    "commander": "^9.4.0",
+    "fs-extra": "^10.1.0"
+  }
 }
