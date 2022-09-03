@@ -1,0 +1,12 @@
+---
+meta:
+  projectName: myProject
+  location: West Europe
+  environment: dev
+  count: "001"
+tags:
+  Owner: John Doe
+  OwnerEmail: john.doe@mail.com
+spec:
+  database:
+    size: dev
