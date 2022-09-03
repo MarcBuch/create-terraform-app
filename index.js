@@ -24,26 +24,16 @@ function init() {
     .showHelpAfterError()
     .parse(process.argv);
 
-  const fullPath = path.resolve(projectName);
+  const destDir = path.resolve(projectName);
 
-  console.log(`Creating a new Terraform project in ${chalk.green(fullPath)}.`);
-  fs.ensureDirSync(fullPath);
+  console.log(`Creating a new Terraform project in ${chalk.green(destDir)}.`);
+  fs.ensureDirSync(destDir);
 
-  // Copy main.tf
-  fs.copyFile(__dirname + '/template/main.tf', fullPath + '/main.tf', (err) => {
-    if (err) {
-      err ? console.log('Error occured: ', err) : null;
-    }
+  let templateDir = path.join(__dirname + '/template');
+
+  fs.copy(templateDir, destDir, (err) => {
+    if (err) throw err;
   });
-
-  // Copy versions.tf
-  fs.copyFile(
-    __dirname + '/template/versions.tf',
-    fullPath + '/versions.tf',
-    (err) => {
-      err ? console.log('Error occured: ', err) : null;
-    }
-  );
 }
 
 init();
