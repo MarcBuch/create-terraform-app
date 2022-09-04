@@ -34,6 +34,7 @@ function init() {
   fs.copy(templateDir, destDir, (err) => {
     if (err) throw err;
   });
+  console.log('Done');
 }
 
 init();
