@@ -2,6 +2,8 @@
 
 A clone of create-react-app to generate basic Terraform code
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Command-line arguments
 
 ```Shell

@@ -29,6 +29,7 @@
     "husky": "^8.0.0"
   },
   "scripts": {
+    "build": "npx tsc",
     "prepare": "husky install"
   },
   "config": {

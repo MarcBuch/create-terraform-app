@@ -5,7 +5,7 @@ const chalk = require('chalk');
 const fs = require('fs-extra');
 const path = require('path');
 
-let projectName;
+let projectName: String;
 
 function init() {
   const program = new Command('create-terraform-app')
@@ -14,7 +14,7 @@ function init() {
       'File path to place the Terraform template'
     )
     .usage(`${chalk.green('<project-directory>')}`)
-    .action((name) => {
+    .action((name: String) => {
       projectName = name;
     })
     .addHelpText(
@@ -31,7 +31,7 @@ function init() {
 
   let templateDir = path.join(__dirname + '/template');
 
-  fs.copy(templateDir, destDir, (err) => {
+  fs.copy(templateDir, destDir, (err: unknown) => {
     if (err) throw err;
   });
   console.log('Done');
