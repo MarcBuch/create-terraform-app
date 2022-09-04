@@ -28,10 +28,11 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       # run: npm test
+      - run: echo ${{github.ref}}
 
   release:
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main ' }}
+    if: github.ref == 'refs/heads/master'
     needs: [build]
     steps:
       - uses: actions/checkout@v3
