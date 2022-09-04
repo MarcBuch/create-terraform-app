@@ -1,13 +1,13 @@
 {
   "name": "create-terraform-app",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Create a Terraform project without hassle",
   "bin": {
     "create-terraform-app": "./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarcBuch/create-terraform-app.git"
+    "url": "https://github.com/MarcBuch/create-terraform-app.git"
   },
   "keywords": [
     "terraform"
@@ -36,7 +36,8 @@
   },
   "scripts": {
     "build": "npx tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "semantic-release": "semantic-release --branches main"
   },
   "config": {
     "commitizen": {
