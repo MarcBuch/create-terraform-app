@@ -2,4 +2,3 @@ node_modules/
 *.tgz
 demo/
 build/
-index.js
